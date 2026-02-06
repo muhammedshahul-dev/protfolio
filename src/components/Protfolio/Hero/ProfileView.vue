@@ -1,6 +1,6 @@
 <template>
 
-    <div class="flex flex-col border-4 border-white py-[24px] max-w-[320px] min-h-fit rounded-tl-[160px] rounded-br-[160px] shadow-[-3px_-3px_0px_0px_#00df9a] lg:mt-[64px] mx-[35px] sm:mx-[224px] lg:mx-[440px]">
+    <div class="flex flex-col border-4 border-white py-[24px] max-w-[320px] min-h-fit rounded-tl-[160px] rounded-br-[160px] shadow-[-3px_-3px_0px_0px_#00df9a] ">
       <div class="flex flex-col items-center">
         <div class="rounded-full border-white border-2 overflow-hidden w-24 h-24">
           <img
