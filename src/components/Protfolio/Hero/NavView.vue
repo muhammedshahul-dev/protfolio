@@ -1,46 +1,44 @@
 <template>
-  <nav class="border-b border-white/10">
-    <div
-      class="max-w-[1200px] mx-auto
-             flex items-center justify-between
-             px-4 py-3
-             md:px-8 md:py-4"
-      >
-      <!-- Logo -->
-      <div class="flex items-center gap-2">
-        <!-- Mobile -->
-        <span class="menu-m sm:hidden">&lt;C/&gt;</span>
-        <span class="menu-m text-white sm:hidden">
-          Muhammed Shahul
-        </span>
+  <div class="lg:flex flex-col items-center gap-6 rounded-2xl border-2 border-white w-14 p-4 bg-slate-900 absolute top-32 left-15 hidden ">
 
-<!-- Desktop -->
-        <span class="logo-m hidden sm:inline">&lt;C/&gt;</span>
-        <span class="logo-m text-white hidden sm:inline">
-          Muhammed Shahul
-        </span>
+    <a href="#home" class="group relative flex items-center justify-center">
+      <LayoutDashboard class="text-white group-hover:text-blue-400 transition-colors" />
+      <span class="absolute left-12 scale-0 rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 transition-all origin-left shadow-lg">
+        Dashboard
+      </span>
+    </a>
 
-      </div>
+    <a href="#about" class="group relative flex items-center justify-center">
+      <User class="text-white group-hover:text-blue-400 transition-colors" />
+      <span class="absolute left-12 scale-0 rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 transition-all origin-left shadow-lg">
+        About
+      </span>
+    </a>
 
-      <!-- Social -->
-      <div class="flex items-center gap-3 md:gap-6">
-        <a class="flex items-center gap-1.5 media-m">
-          <Instagram class="w-5 h-5" />
-          <span class="hidden sm:inline">instagram</span>
-        </a>
+    <a href="#skills" class="group relative flex items-center justify-center">
+      <Code class="text-white group-hover:text-blue-400 transition-colors" />
+      <span class="absolute left-12 scale-0 rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 transition-all origin-left shadow-lg">
+        Skills
+      </span>
+    </a>
 
-        <a class="flex items-center gap-1.5 media-m">
-          <Github class="w-5 h-5" />
-          <span class="hidden sm:inline">Github</span>
-        </a>
-      </div>
-    </div>
-  </nav>
+    <a href="#work" class="group relative flex items-center justify-center">
+      <Monitor class="text-white group-hover:text-blue-400 transition-colors" />
+      <span class="absolute left-12 scale-0 rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 transition-all origin-left shadow-lg">
+        Work
+      </span>
+    </a>
+
+    <a href="#contact" class="group relative flex items-center justify-center">
+      <Mail class="text-white group-hover:text-blue-400 transition-colors" />
+      <span class="absolute left-12 scale-0 rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 transition-all origin-left shadow-lg">
+        Contact
+      </span>
+    </a>
+
+  </div>
 </template>
 
 <script setup>
-import { Github, Instagram } from 'lucide-vue-next'
+  import { LayoutDashboard, User, Code, Monitor, Mail } from 'lucide-vue-next'
 </script>
-<style>
-
-</style>

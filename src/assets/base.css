@@ -51,7 +51,7 @@
     @apply border-brand1 shadow-neon;
   }
   .bg-text-u{
-    @apply font-ubuntu text-[177px] font-normal leading-33.5;
+    @apply font-ubuntu text-[140px] font-normal leading-33.5;
   }
   .btn{
     @apply font-normal font-ubuntu text-[20px] leading-6;
