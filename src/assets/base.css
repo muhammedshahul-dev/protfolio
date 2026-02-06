@@ -53,7 +53,7 @@
   .bg-text-u{
     @apply font-ubuntu text-[140px] font-normal leading-33.5;
   }
-  .btn{
+  .btn-u{
     @apply font-normal font-ubuntu text-[20px] leading-6;
   }
   .article {
