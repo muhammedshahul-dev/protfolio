@@ -9,19 +9,19 @@ import Profileview from './ProfileView.vue';
   <div>
     <HeaderView/>
   </div>
-  <main class="w- lg:h-[1406px]">
+  <main class="w-full  h-full lg:pb-32 py-16" id="home">
     <aside>
       <NavView/>
-      <h1 class=" hidden lg:block bg-text-u text-center lg:mt-[64px] lg:mx-[364px]">Developer</h1>
+      <h1 class=" hidden lg:flex bg-text-u text-center lg:mt-16 lg:mx-91 items-center">Developer</h1>
     </aside>
     <main>
       <div class="
         flex xl:flex-row justify-center items-center flex-col
-        mt-[64px]
-        xl:gap-[128px] xl:mx-[128px]
-        gap-[64px] mx-[31px]
-        md:mx-[60px]
-        lg:mx-[160px]
+        mt-16
+        xl:gap-32 xl:mx-32
+        gap-16 mx-7.75
+        md:mx-15
+        lg:mx-40
 
       ">
         <Profileview/>

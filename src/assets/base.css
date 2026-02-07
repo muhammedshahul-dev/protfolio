@@ -104,6 +104,9 @@
     background-color:theme(--color-bg1);
     color:theme(--color-brand1);
   }
+  html {
+  scroll-behavior:smooth;
+}
 
 
 }

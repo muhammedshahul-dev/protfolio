@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:flex flex-col items-center gap-6 rounded-2xl border-2 border-white w-14 p-4 bg-slate-900 absolute lg:top-32 lg:left-16  hidden ">
+  <div class="lg:flex flex-col items-center gap-6 rounded-2xl border-2 border-white w-14 p-4 bg-bg2 fixed lg:top-32 lg:left-9  hidden ">
 
     <a href="#home" class="group relative flex items-center justify-center">
       <LayoutDashboard class="text-white group-hover:text-blue-400 transition-colors" />
