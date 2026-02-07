@@ -5,35 +5,43 @@ export const useSkillsStore = defineStore('Skills', () => {
   const skills=[
   {
     id: crypto.randomUUID,
-    skill:"html"
+    skill:"html",
+    stack:'front-end'
   },
   {
     id: crypto.randomUUID,
-    skill:"javaScript"
+    skill:"javaScript",
+    stack:'front-end'
   },
   {
     id: crypto.randomUUID,
-    skill:"Css"
+    skill:"Css",
+    stack:'front-end'
   },
   {
     id: crypto.randomUUID,
-    skill:"TailWind"
+    skill:"TailWind",
+    stack:'front-end'
   },
   {
     id: crypto.randomUUID,
-    skill:"vue.js"
+    skill:"vue.js",
+    stack:'front-end'
   },
   {
     id: crypto.randomUUID,
-    skill:"Laravel"
+    skill:"Laravel",
+    stack:'back-end'
   },
   {
     id: crypto.randomUUID,
-    skill:"PHP"
+    skill:"PHP",
+    stack:'back-end'
   },
   {
     id: crypto.randomUUID,
-    skill:"MySql"
+    skill:"Sql",
+    stack:'back-end'
   },
   ]
 
