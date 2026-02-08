@@ -3,11 +3,12 @@ import DomainView from '@/components/Ui/DomainView.vue';
 import ScrollUi from '@/components/Ui/ScrollUi.vue';
 import SectionHeding from '@/components/Ui/SectionHeding.vue';
 import { MonitorSmartphone, Server } from 'lucide-vue-next'
+import SkillSection from './SkillSection.vue';
 
 </script>
 
 <template>
-  <div class=" relative flex flex-col gap-16 lg:px-32 lg:py-32">
+  <div class=" relative flex flex-col gap-16 lg:px-32 lg:py-32 items-center">
     <div class="absolute top-24 right-20 hidden lg:block text-[168px] opacity-70 pointer-events-none select-none">
       <span>&lt;/&gt;</span>
     </div>
@@ -17,7 +18,7 @@ import { MonitorSmartphone, Server } from 'lucide-vue-next'
         I am striving to never stop learning and improving
       </SectionHeding>
     </div>
-    <div>
+    <div class="flex gap-[90px] flex-col items-center justify-center ">
       <div class="flex flex-col sm:flex-row gap-32">
         <DomainView >
           <MonitorSmartphone :size="32"/>
@@ -39,7 +40,7 @@ import { MonitorSmartphone, Server } from 'lucide-vue-next'
         </DomainView>
       </div>
       <div class="">
-
+        <SkillSection />
       </div>
     </div>
   </div>
