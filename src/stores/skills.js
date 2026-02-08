@@ -53,12 +53,14 @@ export const useSkillsStore = defineStore('Skills', () => {
   // Profile/Hero Data
   const profile = reactive({
     name: 'Muhammed Shahul',
+    secondName: 'Shahul',
     title: 'Full-Stack Developer',
     tagline: "Hey i'm Shahul, Full-Stack Developer",
     description:
       "I help business grow by crafting amazing web experiences. If you're looking for a developer that likes to get stuff done,",
     email: 'muahmmedshahullkp@gmail.com',
     location: 'Calicut, Kerala',
+    map: 'https://www.google.com/maps/place/Calicut,+Kerala/@11.2587531,75.7804118,12z/data=!3m1!4b1!4m5!3m4!1s0x3ba65d9cfcfbdc9:0x7e2a1e7b8a9bde0!8m2!3d11.2587531!4d75.7804118',
     status: 'internship',
     website: 'www.muhammedshahullKp.com',
     portfolioLink: 'http://www.muhammedshahullKp.com',
@@ -66,8 +68,8 @@ export const useSkillsStore = defineStore('Skills', () => {
     programingLanguagesCount: 4,
     developmentToolsCount: 6,
     yearsOfExperience: new Date().getFullYear() - 2025,
-    profileImage: new URL('@/assets/image/portrait-happy-male-with-broad-smile.jpg',import.meta.url).href ,
-    codingImage: new URL('@/assets/image/coding.png',import.meta.url).href,
+    profileImage: new URL('@/assets/image/muhammedShahul.jpg', import.meta.url).href,
+    codingImage: new URL('@/assets/image/coding.png', import.meta.url).href,
     about:
       "I'm Muhammed Shahul, a self-taught web developer fueled by a genuine passion for coding. I focus on building clean, functional sites using HTML, CSS, JS, Vue, and Laravel. I'm naturally curious and a dedicated coding enthusiast, constantly teaching myself new ways to write better, more efficient code. For me, development is about the challenge of solving problems and the drive to never stop learning. When I'm not at my desk, I'm usually exploring traveling or reading. I enjoy projects that challenge my perspective and push me to see things through new eyes.",
     socialLinks: {
@@ -75,12 +77,11 @@ export const useSkillsStore = defineStore('Skills', () => {
       instagram: 'https://instagram.com/le.shahol',
       email: 'muahmmedshahullkp@gmail.com',
     },
-    emailJs:{
+    emailJs: {
       serviceId: 'service_b3x5xrl',
       templateId: 'template_z2d8c9b',
       userId: 'oGp_2k-l8cKtJcVKj',
     },
-   
   })
 
   // Skills Data
@@ -188,11 +189,7 @@ export const useSkillsStore = defineStore('Skills', () => {
 
   // Methods to add new projects
 
-
   // Methods to update profile
-
-
-
 
   return {
     profile,

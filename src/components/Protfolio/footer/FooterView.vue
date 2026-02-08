@@ -85,7 +85,7 @@ const socialLinks = [
               {{ profile.socialLinks.email }}
             </a>
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Kozhikode,+Kerala,+India"
+              :href="profile.map"
               target="_blank"
               rel="noopener noreferrer"
               class="text-white/60 hover:text-brand1 transition-colors text-sm flex items-center gap-2"
