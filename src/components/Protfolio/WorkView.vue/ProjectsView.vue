@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useSkillsStore } from '@/stores/SkillStore'
+import { useSkillsStore } from '@/stores/skills.js'
 import MonitorMockup from '@/components/Ui/MonitorMockup.vue'
 
 // 1. Initialize the store

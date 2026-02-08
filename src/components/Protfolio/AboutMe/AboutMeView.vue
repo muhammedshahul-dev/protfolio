@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ParaView from '@/components/Ui/ParaView.vue'
 import ScrollUi from '@/components/Ui/ScrollUi.vue'
-import { useSkillsStore } from '@/stores/SkillStore.js'
+import { useSkillsStore } from '@/stores/skills.js'
 
 const { profile } = useSkillsStore()
 

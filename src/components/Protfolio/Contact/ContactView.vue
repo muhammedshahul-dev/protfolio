@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import ScrollUi from '@/components/Ui/ScrollUi.vue'
 import SectionHeding from '@/components/Ui/SectionHeding.vue'
 import { Mail, Send } from 'lucide-vue-next'
+import { useSkillsStore } from '@/stores/skills.js'
+
+const { profile } = useSkillsStore()
 
 const formData = ref({
   name: '',
@@ -29,11 +32,11 @@ const handleSubmit = async () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        service_id: 'service_b3x5xrl', // Replace with your EmailJS service ID
-        template_id: 'template_z2d8c9b', // Replace with your EmailJS template ID
-        user_id: 'oGp_2k-l8cKtJcVKj', // Replace with your EmailJS public key
+        service_id: profile.emailJs.serviceId, // Replace with your EmailJS service ID
+        template_id: profile.emailJs.templateId, // Replace with your EmailJS template ID
+        user_id: profile.emailJs.userId, // Replace with your EmailJS public key
         template_params: {
-          :to_email: 'muahmmedshahullkp@gmail.com',
+          to_email: profile.email, // Recipient email from profile store
           from_name: formData.value.name,
           from_email: formData.value.email,
           message: formData.value.message,
@@ -61,7 +64,6 @@ const handleSubmit = async () => {
 <template>
   <div
     class="flex flex-col gap-8 sm:gap-16 lg:gap-32 px-4 sm:px-6 md:px-12 lg:px-32 py-8 sm:py-12 lg:py-32 bg-bg1 font-ubuntu w-full"
-
   >
     <div class="hidden lg:block">
       <ScrollUi />
@@ -72,14 +74,12 @@ const handleSubmit = async () => {
         Let's work together and create something amazing
       </SectionHeding>
 
-      <div class="w-full max-w-3xl" >
+      <div class="w-full max-w-3xl">
         <form @submit.prevent="handleSubmit" class="flex flex-col gap-6 sm:gap-8 para-u">
           <!-- Name and Email Row -->
           <div class="flex flex-col sm:flex-row gap-6 sm:gap-8 w-full">
             <div class="flex flex-col gap-3 flex-1 min-w-0">
-              <label for="name" class=" para-u "
-                >Your Name *</label
-              >
+              <label for="name" class="para-u">Your Name *</label>
               <input
                 id="name"
                 v-model="formData.name"
@@ -91,9 +91,7 @@ const handleSubmit = async () => {
             </div>
 
             <div class="flex flex-col gap-3 flex-1 min-w-0">
-              <label for="email" class="para-u"
-                >Your Email *</label
-              >
+              <label for="email" class="para-u">Your Email *</label>
               <input
                 id="email"
                 v-model="formData.email"
@@ -107,9 +105,7 @@ const handleSubmit = async () => {
 
           <!-- Message Field -->
           <div class="flex flex-col gap-3 w-full">
-            <label for="message" class="para-u"
-              >Message *</label
-            >
+            <label for="message" class="para-u">Message *</label>
             <textarea
               id="message"
               v-model="formData.message"

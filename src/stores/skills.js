@@ -75,6 +75,11 @@ export const useSkillsStore = defineStore('Skills', () => {
       instagram: 'https://instagram.com',
       email: 'muahmmedshahullkp@gmail.com',
     },
+    emailJs:{
+      serviceId: 'service_b3x5xrl',
+      templateId: 'template_z2d8c9b',
+      userId: 'oGp_2k-l8cKtJcVKj',
+    }
   })
 
   // Skills Data
@@ -192,5 +197,5 @@ export const useSkillsStore = defineStore('Skills', () => {
     profile,
     skills,
     projects,
-
+  }
 })

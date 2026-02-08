@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SkillIcon from '@/components/Ui/SkillIcon.vue'
-import { useSkillsStore } from '@/stores/SkillStore.js'
+import { useSkillsStore } from '@/stores/skills.js'
 
 const { skills } = useSkillsStore()
 </script>
