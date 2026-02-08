@@ -33,7 +33,7 @@ const handleSubmit = async () => {
         template_id: 'template_z2d8c9b', // Replace with your EmailJS template ID
         user_id: 'oGp_2k-l8cKtJcVKj', // Replace with your EmailJS public key
         template_params: {
-          to_email: 'muahmmedshahullkp@gmail.com',
+          :to_email: 'muahmmedshahullkp@gmail.com',
           from_name: formData.value.name,
           from_email: formData.value.email,
           message: formData.value.message,
@@ -49,7 +49,7 @@ const handleSubmit = async () => {
       submitStatus.value = 'error'
       setTimeout(() => (submitStatus.value = 'idle'), 3000)
     }
-  } catch (error) {
+  } catch {
     submitStatus.value = 'error'
     setTimeout(() => (submitStatus.value = 'idle'), 3000)
   } finally {

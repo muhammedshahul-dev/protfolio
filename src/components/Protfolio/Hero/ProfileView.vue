@@ -69,6 +69,6 @@
 </template>
 <script setup>
 import { Mail, MapPin, BriefcaseBusiness, Link, ArrowDownToLine } from 'lucide-vue-next'
-import { useSkillsStore } from '@/stores/skills'
+import { useSkillsStore } from '@/stores/SkillStore'
 const store = useSkillsStore()
 </script>

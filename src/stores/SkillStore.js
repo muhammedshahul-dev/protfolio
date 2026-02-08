@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 
 const skillLogos = {
   html: {
@@ -51,7 +51,7 @@ const skillLogos = {
 
 export const useSkillsStore = defineStore('Skills', () => {
   // Profile/Hero Data
-  const profile = ref({
+  const profile = reactive({
     name: 'Muhammed Shahul',
     title: 'Full-Stack Developer',
     tagline: "Hey i'm Shahul, Full-Stack Developer",
@@ -179,58 +179,18 @@ export const useSkillsStore = defineStore('Skills', () => {
   ])
 
   // Methods to add new skills
-  const addSkill = (skillKey, skillName, skillColor, skillSvg, stack) => {
-    const newSkill = {
-      id: crypto.randomUUID(),
-      skill: skillKey,
-      stack: stack,
-      name: skillName,
-      color: skillColor,
-      svg: skillSvg,
-    }
-    skills.push(newSkill)
-    return newSkill
-  }
 
   // Methods to add new projects
-  const addProject = (title, image, link, description = '') => {
-    const newProject = {
-      id: projects.value.length + 1,
-      title,
-      image,
-      link,
-      description,
-    }
-    projects.value.push(newProject)
-    return newProject
-  }
 
-  // Methods to delete project
-  const deleteProject = (projectId) => {
-    projects.value = projects.value.filter((p) => p.id !== projectId)
-  }
 
   // Methods to update profile
-  const updateProfile = (updates) => {
-    profile.value = { ...profile.value, ...updates }
-  }
 
-  // Methods to delete skill
-  const deleteSkill = (skillId) => {
-    const index = skills.findIndex((s) => s.id === skillId)
-    if (index > -1) {
-      skills.splice(index, 1)
-    }
-  }
+
+
 
   return {
     profile,
     skills,
     projects,
-    addSkill,
-    addProject,
-    deleteProject,
-    updateProfile,
-    deleteSkill,
-  }
+
 })

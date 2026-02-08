@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import ParaView from '@/components/Ui/ParaView.vue'
 import ScrollUi from '@/components/Ui/ScrollUi.vue'
+import { useSkillsStore } from '@/stores/SkillStore.js'
+
+const { profile } = useSkillsStore()
+
 </script>
 
 <template>
@@ -27,7 +31,7 @@ import ScrollUi from '@/components/Ui/ScrollUi.vue'
               <h1 class="logo-m">Hello!</h1>
               <p class="text-white">
                 <span>
-                  I'm <span class="text-brand1">Muhammed Shahul</span>, a
+                  I'm <span class="text-brand1">{{ profile.name }}</span>, a
                   <span class="text-brand1">self-taught web developer</span> fueled by a genuine
                   passion for coding. I focus on building clean, functional sites using
                   <span class="text-brand1">HTML, CSS, JS, Vue,</span> and
@@ -49,7 +53,7 @@ import ScrollUi from '@/components/Ui/ScrollUi.vue'
         </div>
       </div>
       <div class="flex items-center justify-center">
-        <img src="@/assets/image/coding.png" alt="coding" class="max-w-full max-h-139" />
+        <img :src="profile.codingImage" alt="coding" class="max-w-full max-h-139" />
       </div>
     </div>
   </div>

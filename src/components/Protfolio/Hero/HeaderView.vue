@@ -24,12 +24,20 @@
 
         <!-- Social -->
         <div class="flex items-center gap-3 md:gap-6">
-          <a class="flex items-center gap-1.5 media-m">
+          <a class="flex items-center gap-1.5 media-m"
+            href="https://www.instagram.com/le.shahol/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Instagram class="w-5 h-5" />
             <span class="hidden sm:inline">instagram</span>
           </a>
 
-          <a class="flex items-center gap-1.5 media-m">
+          <a class="flex items-center gap-1.5 media-m"
+            href="https://github.com/muhammedshahul-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Github class="w-5 h-5" />
             <span class="hidden sm:inline">Github</span>
           </a>

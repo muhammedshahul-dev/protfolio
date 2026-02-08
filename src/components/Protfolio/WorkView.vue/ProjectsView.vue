@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useSkillsStore } from '@/stores/skills'
+import { useSkillsStore } from '@/stores/SkillStore'
 import MonitorMockup from '@/components/Ui/MonitorMockup.vue'
 
 // 1. Initialize the store
@@ -21,15 +21,15 @@ const nextImage = () => {
 
 const prevImage = () => {
   if (projects.value.length > 0) {
-    currentIndex.value =
-      (currentIndex.value - 1 + projects.value.length) % projects.value.length
+    currentIndex.value = (currentIndex.value - 1 + projects.value.length) % projects.value.length
   }
 }
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center gap-8 sm:gap-16 px-4 sm:px-6 md:px-16 lg:px-32 py-8 sm:py-16 lg:py-32">
-
+  <div
+    class="flex flex-col items-center justify-center gap-8 sm:gap-16 px-4 sm:px-6 md:px-16 lg:px-32 py-8 sm:py-16 lg:py-32"
+  >
     <div
       v-if="projects && projects.length > 0"
       class="relative flex items-center justify-center group w-full max-w-2xl sm:max-w-3xl lg:max-w-4xl mx-auto"
@@ -38,20 +38,47 @@ const prevImage = () => {
         @click="prevImage"
         class="absolute left-2 sm:left-[-70px] z-20 p-2 sm:p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all border border-white/10 backdrop-blur-md"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
       </button>
 
       <MonitorMockup>
         <div class="monitor-screen-inner bg-black group/screen">
-
-          <div class="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover/screen:opacity-100 transition-all duration-300 bg-black/40 backdrop-blur-[2px]">
+          <div
+            class="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover/screen:opacity-100 transition-all duration-300 bg-black/40 backdrop-blur-[2px]"
+          >
             <a
               :href="projects[currentIndex].link"
               target="_blank"
               class="px-5 py-2.5 bg-white text-black text-sm font-bold rounded-lg shadow-2xl transform translate-y-2 group-hover/screen:translate-y-0 transition-all duration-500 flex items-center gap-2 hover:scale-105 active:scale-95"
             >
               View Website
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
             </a>
           </div>
 
@@ -69,7 +96,19 @@ const prevImage = () => {
         @click="nextImage"
         class="absolute right-2 sm:right-[-70px] z-20 p-2 sm:p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all border border-white/10 backdrop-blur-md"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m9 18 6-6-6-6" />
+        </svg>
       </button>
     </div>
 
