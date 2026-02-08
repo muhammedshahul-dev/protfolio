@@ -39,7 +39,7 @@ const socialLinks = [
 </script>
 
 <template>
-  <footer class="bg-bg1 border-t border-white/10">
+  <footer class="bg-bg2 border-t border-white/10">
     <!-- Main Footer Content -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-32 py-8 sm:py-12 lg:py-16">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 mb-8 sm:mb-12">
