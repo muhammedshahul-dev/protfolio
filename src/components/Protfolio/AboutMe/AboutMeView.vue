@@ -20,7 +20,7 @@ const { profile } = useSkillsStore()
     >
       <div class="flex flex-col gap-16">
         <div
-          class="border-2 border-brand1 rounded-tl-[40px] rounded-br-[40px] w-full max-w-[224px] md:max-w-[367px] px-10 py-4 text-center"
+          class="border-2 border-brand1 rounded-tl-[40px] rounded-br-[40px] md:w-[45%]   px-10 py-4 text-center"
         >
           <h1 class="hidden md:block h1-u">About Me</h1>
           <h1 class="h2-u md:hidden">About Me</h1>

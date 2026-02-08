@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { Github, Instagram, Mail, MapPin, ExternalLink } from 'lucide-vue-next'
+import { Github, Instagram, Mail, MapPin, ExternalLink, Target } from 'lucide-vue-next'
+import { useSkillsStore } from '@/stores/skills'
 
+const {profile} = useSkillsStore()
 const currentYear = new Date().getFullYear()
 
 const quickLinks = [
@@ -15,20 +17,23 @@ const socialLinks = [
   {
     name: 'GitHub',
     icon: Github,
-    href: 'https://github.com',
+    href: profile.socialLinks.github,
     color: 'hover:text-white',
+    target: '_blank',
   },
   {
     name: 'Instagram',
     icon: Instagram,
-    href: 'https://instagram.com',
+    href: profile.socialLinks.instagram,
     color: 'hover:text-pink-400',
+    target: '_blank',
   },
   {
     name: 'Email',
     icon: Mail,
-    href: 'mailto:muahmmedshahullkp@gmail.com',
+    href: `mailto:${profile.socialLinks.email}`,
     color: 'hover:text-brand1',
+    target: '_self',
   },
 ]
 </script>
@@ -73,11 +78,11 @@ const socialLinks = [
           <h3 class="text-white font-semibold text-base">Connect</h3>
           <div class="flex flex-col gap-3">
             <a
-              href="mailto:muahmmedshahullkp@gmail.com"
+              :href="`mailto:${profile.socialLinks.email}`"
               class="text-white/60 hover:text-brand1 transition-colors text-sm flex items-center gap-2"
             >
               <Mail :size="16" />
-              muahmmedshahullkp@gmail.com
+              {{ profile.socialLinks.email }}
             </a>
             <a
               href="https://www.google.com/maps/search/?api=1&query=Kozhikode,+Kerala,+India"
@@ -86,7 +91,7 @@ const socialLinks = [
               class="text-white/60 hover:text-brand1 transition-colors text-sm flex items-center gap-2"
             >
               <MapPin :size="16" />
-              Calicut, Kerala
+              {{ profile.location }}
             </a>
           </div>
         </div>
@@ -99,7 +104,7 @@ const socialLinks = [
       <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
         <!-- Copyright -->
         <p class="text-white/40 text-xs sm:text-sm text-center sm:text-left">
-          © {{ currentYear }} Muhammed Shahul. All rights reserved.
+          © {{ currentYear }} {{ profile.name }}. All rights reserved.
         </p>
 
         <!-- Social Links -->
@@ -109,7 +114,7 @@ const socialLinks = [
             :key="social.name"
             :href="social.href"
             :title="social.name"
-            target="_blank"
+            :target="social.target"
             rel="noopener noreferrer"
             class="text-white/60 transition-all duration-300 p-2 rounded-lg hover:bg-white/5 group"
             :class="social.color"
@@ -124,7 +129,7 @@ const socialLinks = [
 
         <!-- Links -->
         <a
-          href="http://www.muhammedshahullKp.com"
+          :href="profile.portfolioLink"
           target="_blank"
           rel="noopener noreferrer"
           class="text-white/60 hover:text-brand1 transition-colors text-xs sm:text-sm flex items-center gap-1"

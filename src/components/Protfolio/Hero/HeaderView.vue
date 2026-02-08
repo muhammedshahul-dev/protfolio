@@ -25,7 +25,7 @@
         <!-- Social -->
         <div class="flex items-center gap-3 md:gap-6">
           <a class="flex items-center gap-1.5 media-m"
-            href="https://www.instagram.com/le.shahol/"
+            :href=profile.socialLinks.instagram
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -34,7 +34,7 @@
           </a>
 
           <a class="flex items-center gap-1.5 media-m"
-            href="https://github.com/muhammedshahul-dev"
+            :href=profile.socialLinks.github
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -48,6 +48,8 @@
 
 <script setup>
 import { Github, Instagram } from 'lucide-vue-next'
+import { useSkillsStore } from '@/stores/skills'
+const {profile} = useSkillsStore()
 </script>
 <style>
 

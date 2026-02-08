@@ -153,11 +153,11 @@ const handleSubmit = async () => {
             Or reach out directly:
           </p>
           <a
-            href="mailto:muahmmedshahullkp@gmail.com"
+            :href="`mailto:${profile.socialLinks.email}`"
             class="inline-flex items-center justify-center gap-2 text-brand1 hover:text-brand1/80 transition-colors media-m text-sm sm:text-base"
           >
             <Mail :size="18" />
-            muahmmedshahullkp@gmail.com
+            {{ profile.socialLinks.email }}
           </a>
         </div>
       </div>
