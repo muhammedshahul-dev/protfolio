@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
 const skillLogos = {
   html: {
@@ -123,6 +124,24 @@ export const useSkillsStore = defineStore('Skills', () => {
       svg: skillLogos.github.svg,
     },
   ]
+  const projects = ref([
+    {
+      id: 1,
+      image: new URL('@/assets/image/work/image1.png', import.meta.url).href,
+      link: 'https://google.com'
+    },
+    {
+      id: 2,
+      image: new URL('@/assets/image/work/image2.png', import.meta.url).href,
+      link: 'https://github.com'
+    },
+    {
+      id: 3,
+      image: new URL('@/assets/image/work/image3.png', import.meta.url).href,
+      link: 'https://vuejs.org'
+    }
+  ])
 
-  return { skills }
+
+  return { skills, projects }
 })
