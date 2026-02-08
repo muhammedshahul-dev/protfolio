@@ -50,6 +50,34 @@ const skillLogos = {
 }
 
 export const useSkillsStore = defineStore('Skills', () => {
+  // Profile/Hero Data
+  const profile = ref({
+    name: 'Muhammed Shahul',
+    title: 'Full-Stack Developer',
+    tagline: "Hey i'm Shahul, Full-Stack Developer",
+    description:
+      "I help business grow by crafting amazing web experiences. If you're looking for a developer that likes to get stuff done,",
+    email: 'muahmmedshahullkp@gmail.com',
+    location: 'Calicut, Kerala',
+    status: 'internship',
+    website: 'www.muhammedshahullKp.com',
+    portfolioLink: 'http://www.muhammedshahullKp.com',
+    cvLink: '/muhammed shahul cv.pdf',
+    programingLanguagesCount: 4,
+    developmentToolsCount: 6,
+    yearsOfExperience: new Date().getFullYear() - 2025,
+    profileImage: '@/assets/image/portrait-happy-male-with-broad-smile.jpg',
+    codingImage: '@/assets/image/coding.png',
+    about:
+      "I'm Muhammed Shahul, a self-taught web developer fueled by a genuine passion for coding. I focus on building clean, functional sites using HTML, CSS, JS, Vue, and Laravel. I'm naturally curious and a dedicated coding enthusiast, constantly teaching myself new ways to write better, more efficient code. For me, development is about the challenge of solving problems and the drive to never stop learning. When I'm not at my desk, I'm usually exploring traveling or reading. I enjoy projects that challenge my perspective and push me to see things through new eyes.",
+    socialLinks: {
+      github: 'https://github.com',
+      instagram: 'https://instagram.com',
+      email: 'muahmmedshahullkp@gmail.com',
+    },
+  })
+
+  // Skills Data
   const skills = [
     {
       id: crypto.randomUUID(),
@@ -124,24 +152,85 @@ export const useSkillsStore = defineStore('Skills', () => {
       svg: skillLogos.github.svg,
     },
   ]
+
+  // Projects Data
   const projects = ref([
     {
       id: 1,
+      title: 'Project 1',
       image: new URL('@/assets/image/work/image1.png', import.meta.url).href,
-      link: 'https://google.com'
+      link: 'https://google.com',
+      description: 'A modern web application built with Vue.js',
     },
     {
       id: 2,
+      title: 'Project 2',
       image: new URL('@/assets/image/work/image2.png', import.meta.url).href,
-      link: 'https://github.com'
+      link: 'https://github.com',
+      description: 'Full-stack application with Laravel backend',
     },
     {
       id: 3,
+      title: 'Project 3',
       image: new URL('@/assets/image/work/image3.png', import.meta.url).href,
-      link: 'https://vuejs.org'
-    }
+      link: 'https://vuejs.org',
+      description: 'Responsive design with Tailwind CSS',
+    },
   ])
 
+  // Methods to add new skills
+  const addSkill = (skillKey, skillName, skillColor, skillSvg, stack) => {
+    const newSkill = {
+      id: crypto.randomUUID(),
+      skill: skillKey,
+      stack: stack,
+      name: skillName,
+      color: skillColor,
+      svg: skillSvg,
+    }
+    skills.push(newSkill)
+    return newSkill
+  }
 
-  return { skills, projects }
+  // Methods to add new projects
+  const addProject = (title, image, link, description = '') => {
+    const newProject = {
+      id: projects.value.length + 1,
+      title,
+      image,
+      link,
+      description,
+    }
+    projects.value.push(newProject)
+    return newProject
+  }
+
+  // Methods to delete project
+  const deleteProject = (projectId) => {
+    projects.value = projects.value.filter((p) => p.id !== projectId)
+  }
+
+  // Methods to update profile
+  const updateProfile = (updates) => {
+    profile.value = { ...profile.value, ...updates }
+  }
+
+  // Methods to delete skill
+  const deleteSkill = (skillId) => {
+    const index = skills.findIndex((s) => s.id === skillId)
+    if (index > -1) {
+      skills.splice(index, 1)
+    }
+  }
+
+  return {
+    profile,
+    skills,
+    projects,
+    addSkill,
+    addProject,
+    deleteProject,
+    updateProfile,
+    deleteSkill,
+  }
 })

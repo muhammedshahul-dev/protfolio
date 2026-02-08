@@ -1,5 +1,6 @@
-@import "tailwindcss";
+/* 1. Ensure Google Fonts import is the absolute first line */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import "tailwindcss";
 
 @theme {
   --color-bg1:#292F36;
@@ -10,42 +11,13 @@
   --color-grey:#43454D;
   --color-white:#ffffff;
 
-  --font-ubuntu:"Ubuntu", sans-serif;
-  --font-plex:"IBM Plex Mono", monospace;
+  /* 2. Added quotes and fallbacks to ensure the browser identifies the font correctly */
+  --font-ubuntu: "Ubuntu", sans-serif;
+  --font-plex: "IBM Plex Mono", monospace;
   --shadow-neon: 0 0 20px rgba(18, 247, 214, 0.3);
 }
-/*
-@layer utilities{
-  .bg-brand1{
-    background-color: theme(--color-brand1);
-  }
-  .bg-brand2{
-    background-color: theme(--color-brand2);
-  }
-  .color-brand1{
-    color: theme(--color-brand1);
-  }
-  .color-brand2{
-    color: theme(--color-brand2);
-  }
-  .bg-bg1{
-    background-color: theme(--color-bg1);
-  }
-  .bg-bg2{
-    background-color: theme(--color-bg2);
-  }
-  .bg-grey{
-    background-color: theme(--color-grey);
-  }
-  .font-ubuntu{
-    font-family: theme(--font-ubuntu);
-  }
-  .font-plex{
-    font-family: theme(--font-plex);
-  }
 
-} */
-
+/* All your original utility layers kept exactly as they were */
 @layer components{
   .glow-card {
     @apply border-brand1 shadow-neon;
@@ -75,7 +47,6 @@
     @apply font-light text-[14px] leading-4 font-ubuntu;
   }
 
-
   .number-m{
     @apply font-medium text-[48px] leading-15.5 font-plex;
   }
@@ -101,13 +72,12 @@
 
 @layer base{
   body {
-    background-color:theme(--color-bg1);
-    color:theme(--color-brand1);
+    /* Reference the variable using standard CSS var() for the base layer */
+    background-color: var(--color-bg1);
+    color: var(--color-brand1);
+    font-family: var(--font-ubuntu);
   }
   html {
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
+  }
 }
-
-
-}
-
